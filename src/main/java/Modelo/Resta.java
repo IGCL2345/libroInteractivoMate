@@ -21,7 +21,7 @@ public class Resta extends Operaciones{
 
     @Override
     public String obtenerInformacion(int a, int b) {
-        return "Para sumar juntamos dos cantidades " + a + " - " + b + " = " + (a - b);
+        return "Para restar juntamos dos cantidades " + a + " - " + b + " = " + (a - b);
     }
 
     public String getPreguntas(int posicion) {
@@ -35,4 +35,13 @@ public class Resta extends Operaciones{
     public int cantidadPreguntas(){
         return preguntas.length;
     }
+    @Override
+public void generarNumeros(int max) {
+    super.generarNumeros(max);
+    if (getNum1() < getNum2()) {        // el mayor siempre va primero
+        int temp = getNum1();
+        setNum1(getNum2());
+        setNum2(temp);
+    }
+}
 }

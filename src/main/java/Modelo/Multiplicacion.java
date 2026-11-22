@@ -21,7 +21,7 @@ public class Multiplicacion extends Operaciones{
 
     @Override
     public String obtenerInformacion(int a, int b) {
-        return "Para sumar juntamos dos cantidades " + a + " x " + b + " = " + (a * b);
+        return "Para multiplicar juntamos dos cantidades " + a + " x " + b + " = " + (a * b);
     }
 
     public String getPreguntas(int posicion) {

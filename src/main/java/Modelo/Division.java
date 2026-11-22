@@ -4,6 +4,8 @@
  */
 package Modelo;
 
+import java.util.Random;
+
 /**
  *
  * @author user
@@ -30,13 +32,14 @@ public class Division extends Operaciones{
         return "no se puede dividir entre cero. ";
     }
 
-    public String getPreguntas(int posicion) {
-        return preguntas[posicion];
-    }
-
-    public int getRespuestas(int posicion) {
-        return respuestas[posicion];
-    }
+   @Override
+public void generarNumeros(int max) {
+    Random random = new Random();
+    int divisor = random.nextInt(max) + 1;      // nunca 0
+    int cociente = random.nextInt(max + 1);
+    setNum2(divisor);
+    setNum1(divisor * cociente);                // división siempre exacta
+}
     
     public int cantidadPreguntas(){
         return preguntas.length;

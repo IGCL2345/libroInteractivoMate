@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author user
@@ -18,7 +20,20 @@ public class VistaMenu extends javax.swing.JFrame {
     public VistaMenu() {
         initComponents();
     }
-
+public void addMenuListener( ActionListener l) {
+    btnSuma.setActionCommand("SUMA");
+    btnResta.setActionCommand("RESTA");
+    btnMultiplicacion.setActionCommand("MULTIPLICACION");
+    btnDivision.setActionCommand("DIVISION");
+    btnSalir.setActionCommand("SALIR");
+    
+    
+    btnSuma.addActionListener(l);
+    btnResta.addActionListener(l);
+    btnMultiplicacion.addActionListener(l);
+    btnDivision.addActionListener(l);
+    btnSalir.addActionListener(l);
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,19 +43,14 @@ public class VistaMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnlBack = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
         btnSuma = new javax.swing.JButton();
         btnResta = new javax.swing.JButton();
         btnMultiplicacion = new javax.swing.JButton();
         btnDivision = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        pnlBack.setBackground(new java.awt.Color(0, 255, 204));
-        pnlBack.setForeground(new java.awt.Color(0, 204, 204));
-        pnlBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTitulo.setText("Menu Mate ");
@@ -61,15 +71,12 @@ public class VistaMenu extends javax.swing.JFrame {
         btnDivision.setBorderPainted(false);
         btnDivision.setContentAreaFilled(false);
 
-        jButton1.setText("SALIR");
+        btnSalir.setText("SALIR");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(158, 158, 158)
-                .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -81,7 +88,7 @@ public class VistaMenu extends javax.swing.JFrame {
                             .addComponent(btnDivision)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(74, 74, 74)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(76, 76, 76)
                         .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -95,16 +102,14 @@ public class VistaMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSuma)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlBack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnResta)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnMultiplicacion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDivision)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(176, Short.MAX_VALUE))
         );
 
         pack();
@@ -116,9 +121,8 @@ public class VistaMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnDivision;
     private javax.swing.JButton btnMultiplicacion;
     private javax.swing.JButton btnResta;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSuma;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JPanel pnlBack;
     // End of variables declaration//GEN-END:variables
 }
